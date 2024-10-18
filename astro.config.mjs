@@ -1,7 +1,10 @@
 import { defineConfig } from 'astro/config'
+import sitemap from '@astrojs/sitemap' // 用于生成网站的站点地图（利于SEO）
 
 export default defineConfig({
-	scss: {
-		files: [import.meta.url + '/../src/styles/globals.scss'],
+	image: {
+		domains: ['astro.build'],
+		remotePatterns: [{ protocol: 'https' }],
 	},
+	integrations: [sitemap()],
 })

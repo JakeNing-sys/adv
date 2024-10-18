@@ -1,5 +1,16 @@
 ---
+// import { Image } from 'astro:assets'
+import DownloadBtn from '@components/DownloadBtn.astro'
 
+import logo from '@assets/images/adv2/logo.png'
+// import logo from '../../assets/images/adv2/logo.png'
+import bg from '@assets/images/adv2/bg.png'
+import a6 from '@assets/images/adv2/a6.png'
+import img3 from '@assets/images/adv2/img3.png'
+import img4 from '@assets/images/adv2/img4.png'
+import img5 from '@assets/images/adv2/img5.png'
+import img6 from '@assets/images/adv2/img6.png'
+import img7 from '@assets/images/adv2/img7.png'
 ---
 
 <!doctype html>
@@ -7,30 +18,171 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> -->
 		<title>广告2</title>
-		<!-- <link rel="stylesheet" href="/src/styles/globals.css" /> -->
 	</head>
 	<body>
-		<h1>Adv2</h1>
+		<div class="container">
+			<div class="logo">
+				<img src={logo.src} class="logo-img" alt="" />
+			</div>
+			<div class="content">
+				<div class="content-left">
+					<div class="content-left-title">高速 稳定 流畅</div>
+					<div class="content-left-suptext">限时免费试用</div>
+					<div class="content-left-a6img">
+						<img src={a6.src} width={'121px'} height={'56px'} alt="" />
+					</div>
+					<div class="content-left-list">
+						<div class="content-left-list-item">
+							<div class="content-left-list-item-content">
+								<img src={img6.src} width={'28px'} height={'28px'} alt="" />
+								<span class="text">2000+ 高速节点</span>
+							</div>
+							<div class="content-left-list-item-content">
+								<img src={img4.src} width={'28px'} height={'28px'} alt="" />
+								<span class="text">2000+ 应用支持</span>
+							</div>
+						</div>
+						<div class="content-left-list-item">
+							<div class="content-left-list-item-content">
+								<img src={img5.src} width={'28px'} height={'28px'} alt="" />
+								<span class="text">1000+ 国家和地区</span>
+							</div>
+							<div class="content-left-list-item-content">
+								<img src={img3.src} width={'28px'} height={'28px'} alt="" />
+								<span class="text">7*24小时 在线客服</span>
+							</div>
+						</div>
+					</div>
+					<div style="margin-top: 72px;">
+						<DownloadBtn downloadBtnText={'APK立即下载'} downloadIcon={img7.src} />
+					</div>
+				</div>
+				<div class="content-right">
+					<img src={bg.src} width={'664px'} height={'557px'} alt="" />
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
 
 <style>
-	@media only screen and (min-width: 961px) and (max-width: 1260px) {
-		h1 {
-			color: red;
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	/* PC */
+	@media only screen and (min-width: 601px) {
+		body {
+			background-color: #fff7ed;
+		}
+
+		.container {
+			width: 1200px;
+			margin: 0 auto;
+			box-sizing: border-box;
+		}
+
+		.logo {
+			margin-top: 70px;
+		}
+
+		.logo-img {
+			width: 181px;
+			height: 65px;
+		}
+
+		.content {
+			margin-top: 27px;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.content-left {
+		}
+
+		.content-left-title {
+			font-family: MiSans, MiSans;
+			font-weight: 700;
+			font-size: 70px;
+			color: #1a1a1a;
+			margin-top: 68px;
+		}
+
+		.content-left-suptext {
+			font-family: MiSans, MiSans;
+			font-weight: 700;
+			font-size: 70px;
+			color: #ff7503;
+			margin-top: 15px;
+		}
+
+		.content-left-a6img {
+			margin-top: 21px;
+		}
+
+		.content-left-list {
+			margin-top: 35px;
+		}
+
+		.content-left-list-item {
+			display: flex;
+		}
+
+		.content-left-list-item-content {
+			display: flex;
+			align-items: center;
+			width: 165px;
+		}
+
+		.content-left-list-item:nth-child(2) {
+			margin-top: 22px;
+		}
+
+		.content-left-list-item-content:nth-child(2) {
+			margin-left: 40px;
+		}
+
+		.text {
+			font-family:
+				Source Han Sans,
+				Source Han Sans;
+			font-weight: 700;
+			font-size: 14px;
+			color: #1a1a1a;
+			margin-left: 16px;
 		}
 	}
 
-	@media only screen and (min-width: 601px) and (max-width: 960px) {
-		h1 {
-			color: blue;
-		}
-	}
+	/* 平板 */
+	/* @media only screen and (min-width: 601px) and (max-width: 960px) {
+	} */
 
+	/* 手机 */
 	@media only screen and (max-width: 600px) {
-		h1 {
-			color: green;
+		body {
+			background-color: #fff7ed;
+		}
+
+		.container {
+			width: 100%;
+		}
+
+		.logo {
+			display: flex;
+			justify-content: center;
+			margin-top: 16px;
+		}
+
+		.logo-img {
+			width: 104px;
+			height: 37px;
+		}
+
+		.content {
+			margin-top: 33px;
 		}
 	}
 </style>
