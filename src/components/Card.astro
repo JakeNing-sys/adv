@@ -4,12 +4,8 @@ interface Props {
 	body: string
 	href: string
 }
-interface Locals {
-	middlewareTitle: string
-}
 
 const { href, title, body } = Astro.props
-const { middlewareTitle } = Astro.locals as Locals
 ---
 
 <li class="link-card">
@@ -20,7 +16,6 @@ const { middlewareTitle } = Astro.locals as Locals
 		</h2>
 		<p>
 			{body}
-			<p>这个 [<b>{middlewareTitle}</b>] 来自中间件。</p>
 		</p>
 	</a>
 </li>

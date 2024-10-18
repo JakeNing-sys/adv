@@ -8,6 +8,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>广告2</title>
+		<!-- <link rel="stylesheet" href="/src/styles/globals.css" /> -->
 	</head>
 	<body>
 		<h1>Adv2</h1>
@@ -15,7 +16,21 @@
 </html>
 
 <style>
-	h1 {
-		color: red;
+	@media only screen and (min-width: 961px) and (max-width: 1260px) {
+		h1 {
+			color: red;
+		}
+	}
+
+	@media only screen and (min-width: 601px) and (max-width: 960px) {
+		h1 {
+			color: blue;
+		}
+	}
+
+	@media only screen and (max-width: 600px) {
+		h1 {
+			color: green;
+		}
 	}
 </style>
